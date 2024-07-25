@@ -23,7 +23,7 @@ function App() {
     const fetchExpenses = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/getExpenses"
+          "https://expense-tracker-4emf.onrender.com/getExpenses"
         );
         setExpenses(response.data);
       } catch (error) {

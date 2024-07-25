@@ -16,7 +16,7 @@ const TransactionList = ({ onExpenseDeleted }) => {
     const fetchExpenses = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/getExpenses"
+          "https://expense-tracker-4emf.onrender.com/getExpenses"
         );
         setExpenses(response.data);
       } catch (error) {
@@ -30,7 +30,7 @@ const TransactionList = ({ onExpenseDeleted }) => {
   const handleDeleteExpense = async (expenseId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/deleteExpense/${expenseId}`
+        `https://expense-tracker-4emf.onrender.com/deleteExpense/${expenseId}`
       );
       console.log("Expense deleted:", response.data);
       onExpenseDeleted(); // Trigger a refresh after deletion
@@ -49,7 +49,7 @@ const TransactionList = ({ onExpenseDeleted }) => {
   const handleSaveEdit = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/editExpense/${editingExpenseId}`,
+        `https://expense-tracker-4emf.onrender.com/editExpense/${editingExpenseId}`,
         {
           description: editedDescription,
           amount: parseFloat(editedAmount),
